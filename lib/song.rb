@@ -30,15 +30,26 @@ class Song
       @@genres.uniq 
     end 
     
-    
+    def self.genre_count
+      genre_count={}
+      @@genres.each do |genre| 
+        #binding.pry
+        if genre_count[genre] 
+          genre_count[genre] += 1 
+        else 
+          genre_count[genre] = 1 
+        end 
+      end 
+      genre_count
+    end
     
     def self.artist_count
       artist_count={}
-      self.each do |artist| 
+      @@artists.each do |artist| 
         if artist_count[artist]
-          artist_count += 1
+          artist_count[artist] += 1
         else
-          artist_count = 1 
+          artist_count[artist] = 1 
         end 
       end 
       artist_count
