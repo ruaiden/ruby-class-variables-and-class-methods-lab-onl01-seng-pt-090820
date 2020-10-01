@@ -32,7 +32,7 @@ class Song
       @@genres.uniq 
     end 
     
-    def genre_count
+    def self.genre_count
       
       self.each do |genres,index| @@genre_count << genres + index
     end 
