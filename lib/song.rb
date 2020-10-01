@@ -2,8 +2,6 @@ require 'pry'
 class Song
   
 @@count = 0 
-@@artist_count={}
-
 @@artists = []
 @@genres = []
 
@@ -32,17 +30,9 @@ class Song
       @@genres.uniq 
     end 
     
-    def self.genre_count
-      genre_count={}
-      @@genres.each do |genre| 
-        #binding.pry
-        if genre_count[genre] 
-          genre_count[genre] += 1 
-        else 
-          genre_count[genre] = 1 
-        end 
-      end 
-      genre_count
-    end
+    
+    
+    def artist_count
+      artist_count={}
     
 end 
